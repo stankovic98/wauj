@@ -1,0 +1,13 @@
+<h2>Popis studenata</h2>
+<ul class="students">
+<li *ngFor="let student of students"
+  routerLink="{{ student.jmbag }}">
+<span class="badge">{{student.jmbag}}</span> {{student.numberOfEcts}} ECTS <a class="delete" (click)="deleteStudent(student.jmbag)"></a>
+</li>
+</ul>
+
+<input class="input" type="text" #jmbag placeholder="Enter Jmbag">
+<input class="input" type="text" #name placeholder="Enter name">
+<input class="input" type="text" #surname placeholder="Enter surname">
+<input class="input" type="text" #ects placeholder="Enter number of ects">
+<a class="button" (click)="addStudent(jmbag.value, name.value, surname.value, ects.value)">Add Student</a>
